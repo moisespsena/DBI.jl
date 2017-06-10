@@ -18,6 +18,12 @@ module DBI
            sql2jltype,
            tableinfo
 
+    if VERSION >= v"0.5"
+        const bytestring = unsafe_string
+        const ASCIIString = String
+        const UTF8String = String
+    end
+
     if !isdefined(:AbstractString)
         const AbstractString = Base.String
     end
